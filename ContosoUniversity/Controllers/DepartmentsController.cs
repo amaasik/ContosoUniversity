@@ -61,7 +61,7 @@ namespace ContosoUniversity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DepartmentId,Name,Budget,StartDate,InstructorID,RowVersion")] Department department)
+        public async Task<IActionResult> Create([Bind("DepartmentId,Name,Budget,StartDate,InstructorId,RowVersion")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace ContosoUniversity.Controllers
             {
                 return NotFound();
             }
-            ViewData["InstructorId"] = new SelectList(_context.Instructors, "ID", "FullName", department.InstructorId);
+            ViewData["InstructorId"] = new SelectList(_context.Instructors, "Id", "FullName", department.InstructorId);
             return View(department);
         }
 

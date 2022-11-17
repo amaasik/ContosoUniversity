@@ -24,7 +24,7 @@
         @foreach (var item in Model.Instructors)
         {
             string selectedRow = "";
-            if (item.Id == (int?)ViewData["InstructorID"])
+            if (item.Id == (int?)ViewData["InstructorId"])
             {
                 selectedRow = "success";
             }
